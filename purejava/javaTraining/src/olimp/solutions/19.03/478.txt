@@ -1,0 +1,26 @@
+import java.util.Locale;
+import java.util.Scanner;
+
+
+public class Main
+{
+   public static void main(String[] args){
+               
+       
+       
+       Scanner in = new Scanner(System.in );
+       in.useLocale(Locale.US);
+       
+       long y;
+       
+       long A = in.nextLong();
+       long B = in.nextLong();
+       long C = in.nextLong();
+       
+       long z = A*B*C;
+       long x = z * 6L - 2L*(A*B + B*C + A*C);
+       
+       System.out.println( z + " " + x );
+
+   }
+}

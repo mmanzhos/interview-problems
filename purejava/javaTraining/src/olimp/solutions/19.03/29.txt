@@ -1,0 +1,76 @@
+import java.util.ArrayList;
+import java.util.Locale;
+import java.util.Scanner;
+
+
+public class Main
+{
+  public static void main(String[] args){
+              
+      
+      Scanner in = new Scanner(System.in );
+      in.useLocale(Locale.US);
+      
+      int m = in.nextInt();
+      
+      ArrayList<String> xx = new ArrayList<String>();
+      
+      String m_s = "" + m;
+      String m_r;
+          
+      xx.add(m_s);
+      
+      boolean isPal = false;
+      
+      int i = 0;
+      while(!isPal){
+          String curr = xx.get(i);
+          if(!isPalindrom(curr)){
+              m_r = Palindromize(curr);
+              long x1 = Long.parseLong(curr);
+              long x2 = Long.parseLong(m_r);
+              xx.add(""+(x1 + x2));
+          }
+          else{
+              isPal = true;
+          }
+          i++;
+      }
+      
+      for(int j = 0; j < xx.size(); j++){
+          //System.out.println( xx.get(j) );
+      }
+          
+      System.out.println( xx.size() - 1);
+      
+     
+  }
+  
+  public static String Palindromize(String n){
+      String reverse = "";
+      int length = n.length();
+      
+      for ( int i = length - 1; i >= 0; i-- )
+           reverse = reverse + n.charAt(i);
+   
+     // if (text.equals(reverse)) isIt = true;
+      
+      return reverse;
+  }
+  
+  public static boolean isPalindrom(String text){
+      
+      boolean isIt = false;
+      
+      String reverse = "";
+      int length = text.length();
+      
+      for ( int i = length - 1; i >= 0; i-- )
+           reverse = reverse + text.charAt(i);
+   
+      if (text.equals(reverse)) isIt = true;
+      
+      return isIt;
+  }
+  
+}

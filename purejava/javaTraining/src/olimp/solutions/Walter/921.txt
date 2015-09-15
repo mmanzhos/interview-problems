@@ -1,0 +1,28 @@
+import java.util.Locale;
+import java.util.Scanner;
+
+
+public class Main
+{
+	public static void main(String[] args){
+				
+		Scanner in = new Scanner(System.in );
+		in.useLocale(Locale.US);
+		
+		int k = 0;
+		float sum = 0;
+		int A = in.nextInt();
+		float[] minus = new float[A];
+		
+		for(int i = 0; i < A; i++) 
+			{
+				minus [i] = in.nextFloat();
+			if(minus[i] < 0) {
+				sum += minus[i];
+				k++;
+			}
+		}
+		System.out.println(String.format(Locale.US, k + " " +  "%.2f", sum));
+
+	}
+}

@@ -1,0 +1,34 @@
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Main
+{
+	public static void main(String[] args){
+				
+		Scanner in = new Scanner(System.in );
+		in.useLocale(Locale.US);
+		
+		int A = in.nextInt();
+		
+		
+		double[] toys = new double[A];
+		double[] prices = new double[A];
+		
+		for(int j = 0; j < A; j++) {
+			toys[j] = in.nextDouble();
+			prices[j] = in.nextDouble();
+		}
+		
+		int limit = 50;
+		int qty = 0;
+		
+		for(int i = 0; i < A; i++){
+			if(prices[i] < limit) qty += toys[i];
+ 		}
+		
+		System.out.println(qty);
+		System.out.flush();
+
+
+	}
+}

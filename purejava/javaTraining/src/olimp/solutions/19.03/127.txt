@@ -1,0 +1,38 @@
+import java.util.Locale;
+import java.util.Scanner;
+
+
+public class Main
+{
+   public static void main(String[] args){
+               
+       
+       Scanner in = new Scanner(System.in );
+       in.useLocale(Locale.US);
+       
+       long sum_e = in.nextLong();
+       long sum_c = 0;
+       long prev = 0;
+       int years = 0;
+       int i = 0;
+       
+       //ArrayList<Long> xx = new ArrayList<Long>();
+       
+       
+       while(sum_e > sum_c){
+           if(i == 0){
+               //xx.add(1L);
+               sum_c += 1L;
+               prev = 1L;
+           }
+           else {
+               sum_c += prev*2L + (i+1);
+               prev = prev*2L + (i+1);
+               //xx.add(sum_c);
+           }
+           //System.out.println( sum_c );
+           i++;
+       }
+       
+       System.out.println( i );
+}}

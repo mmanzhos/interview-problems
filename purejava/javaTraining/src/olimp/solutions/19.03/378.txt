@@ -1,0 +1,76 @@
+import java.io.File;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Scanner;
+
+
+public class Main
+{
+   public static void main(String[] argv) throws IOException{
+       new Main().run();
+   }
+   
+   PrintWriter pw;
+   Scanner sc;
+   
+   public void run() throws IOException{
+           
+        File file = new File("input.txt");
+        sc = new Scanner(file);
+        pw = new PrintWriter(new File("output.txt"));
+       
+        //String[] x = null;
+        //String[] y = null;
+        String[] letters = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
+        //String decoded = "";
+        String space = " ";
+        while ( sc.hasNextLine() ) { //|| sc.nextLine().equals("") 
+           String decoded = "";
+           String empty = "";
+            
+           //String sample = sc.nextLine();
+           //if(!sample.contains("Sample")) sample = sc.nextLine();
+           //System.out.println( "sample=" + sample);
+           String coded = sc.nextLine();
+           String decoder = sc.nextLine();
+           //sc.nextLine();
+
+           //if( sc.nextLine().equals("") ) 
+           //sc.nextLine();
+           
+           //String empty = "";
+           //
+           //empty = sc.nextLine();
+            
+           int index = 0;
+           for(int i = 0; i < coded.length(); i++){
+               if(coded.charAt(i) != space.charAt(0)){
+                   //System.out.println( coded.charAt(i) );
+                   for(int j = 0; j < letters.length; j++){
+                       index = letters[j].indexOf(""+coded.charAt(i));
+                       if(index != -1) {
+                           index = j;
+                           //System.out.println( index );
+                           break;
+                       }
+                   }
+                   
+                   decoded += ""+decoder.charAt(index);
+               } else decoded += " ";
+           }
+           
+           //System.out.println( sample );
+           //System.out.println( decoded );
+           
+           //pw.println(sample);
+           pw.println(decoded);
+           if(sc.hasNextLine())pw.println();
+           
+           
+           
+        }
+       
+        pw.close();
+           
+       }
+}

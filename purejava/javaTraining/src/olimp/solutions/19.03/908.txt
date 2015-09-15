@@ -1,0 +1,30 @@
+import java.util.Locale;
+import java.util.Scanner;
+
+
+public class Main
+{
+	public static void main(String[] args){
+				
+		Scanner in = new Scanner(System.in );
+		in.useLocale(Locale.US);
+		
+		int qty = 0;
+		int sum = 0;
+		
+		int A = in.nextInt();
+		double[] numbers = new double[A];
+		
+		for(int j = 0; j < A; j++) {
+			numbers[j] = in.nextDouble();
+			if(numbers[j] % 6 == 0 && numbers[j]>0 && numbers[j] % 1 == 0) {
+				sum += numbers[j];
+				qty++;
+			}
+		}
+		
+		System.out.println(qty + " " + sum);
+		System.out.flush();
+
+	}
+}

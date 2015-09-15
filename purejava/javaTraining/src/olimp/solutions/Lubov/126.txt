@@ -1,0 +1,21 @@
+import java.util.Scanner;
+public class Main 
+
+{
+	public static void main (String[] args)
+	{
+		Scanner in = new Scanner(System.in);
+		{
+			int N = in.nextInt();
+			int P = in.nextInt();
+			int Q = in.nextInt();
+			int K = in.nextInt();
+			int NvQ = (N/(P*Q));//кв на пов у 1 під
+			int NvP = (N/P);//кв у під
+			int NomP = (K+(NvP-1))/NvP;//(K/Nvp)+((NvP-1)/NvP) другий доданок прямує до 1,але менший на випадок цілочисельного ділення
+			int NomQ = ((K-(NomP-1)*NvP)+(NvQ-1))/NvQ;//аналогічно
+			System.out.println(NomP + " " + NomQ);
+		}
+System.out.flush();
+	}
+}

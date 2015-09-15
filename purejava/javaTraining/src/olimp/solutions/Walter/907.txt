@@ -1,0 +1,54 @@
+import java.util.Locale;
+import java.util.Scanner;
+public class Main 
+
+{
+	public static void main (String[] args)
+	{
+		Scanner in = new Scanner(System.in);
+		in.useLocale(Locale.US);
+		
+		int A = in.nextInt(); //количество елементов масива
+		float x[] = new float [A]; //елементы масива размерностью ј
+		int i;
+		float j = 0;
+		float z = 0;
+		//float ind = 0;
+		
+		
+		//int i2 = 1;
+		for (i = 0; i < A; i++) 
+			{
+				x[i] = in.nextFloat(); //цикл, отвечающий за введение елементов в масив
+			}
+		
+			for (i = 0; i<A; i++)
+			{
+				if (x[i] > 2.5) //цикл: если елемент > 2.5 - проверить следующий элемент
+				{ 
+					if (i + 1 < A);
+					else if (i + 1 == A) System.out.println("Not Found"); //условна€ функци€: если все елементы проверены 
+																		  //и все > 2.5 - выдать Not found
+				}
+				else if (x[i] <= 2.5) 
+						{ 				//если провер€емый элемент < 2.5 - сохранить его значение в j, а пор€дковый номер в ind
+					j = j + x[i];
+					int ind = i + 1;
+					String inds = Integer.toString(ind);
+					//System.out.printf(ind + " " + "%.2f", j);
+					//System.out.println(ind);
+					System.out.println(String.format(inds + " " +  "%.2f", j).replace(',','.'));
+					break;
+						}
+				
+				
+				 	
+			}
+							
+				}
+			
+				
+			}
+				
+				
+	

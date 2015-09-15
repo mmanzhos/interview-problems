@@ -1,0 +1,39 @@
+import java.util.Locale;
+import java.util.Scanner;
+
+
+public class Main
+{
+	public static void main(String[] args)
+	{
+				
+		Scanner in = new Scanner(System.in );
+		in.useLocale(Locale.US);
+				
+		int A = in.nextInt();
+		float[] Ad = new float[A];
+		float srar = 0;
+		int qua=0;
+		
+		for(int i = 0; i < A; i++)
+			{
+				Ad[i] = in.nextFloat();
+				if(Ad[i] > 0) 
+				{
+					srar=srar+Ad[i];
+					qua=qua+1;
+				}
+			}
+		
+		if (qua==0)
+		{	
+			System.out.println("Not Found");
+		}
+		else 
+		{
+			System.out.format(Locale.US, "%.2f%n", srar/qua);
+		}
+		System.out.flush();
+
+	}
+}		

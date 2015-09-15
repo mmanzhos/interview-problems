@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class Main
+{
+	public static void main(String[] args){
+
+	Scanner in = new Scanner(System.in);
+      String[] a = in.nextLine().split(" ");
+      //String[] b = a.split(" ");
+      
+      double c = Double.parseDouble(a[0]);
+      double d = Double.parseDouble(a[1]);
+      
+      double s2 = d*d*Math.PI;
+      double r1 = Math.sqrt((s2-c)/Math.PI);
+      
+      double result = Math.round(r1 * 100) / 100.0f;
+      
+      System.out.format( Locale.US, "%.2f%n", result );
+      System.out.flush();
+
+}
+}

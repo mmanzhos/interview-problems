@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class Main
+{
+	public static void main(String[] args){
+
+		Scanner in = new Scanner(System.in);
+	   String[] x = in.nextLine().split(" ");
+	   
+	   int a = Integer.parseInt(x[0]);
+	   int b = Integer.parseInt(x[1]);
+	   int c = Integer.parseInt(x[2]);
+	   
+	   int y = Integer.parseInt(x[0]) + Integer.parseInt(x[1]) + Integer.parseInt(x[2]);
+	   int z = Math.round(y/3);
+	   
+	   if(a > b && a > c && c > b) z = c;
+	   else if(a > b && a > c && c < b) z = b;
+	   
+	   else if(c > b && c > a && a > b) z = a;
+	   else if(c > b && c > a && a < b) z = b;
+	   
+	   else if(b > a && b > c && c > a) z = c;
+	   else if(b > a && b > c && c < a) z = a;
+	   
+	   System.out.println( z );
+   	   System.out.flush();
+
+}
+}

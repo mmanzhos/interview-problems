@@ -1,0 +1,31 @@
+import java.util.Locale;
+import java.util.Scanner;
+
+
+public class Main
+{
+   public static void main(String[] args){
+               
+       Scanner in = new Scanner(System.in );
+       in.useLocale(Locale.US);
+       
+       double A = in.nextDouble();
+       double B = in.nextDouble();
+       double C = in.nextDouble();
+       double D = in.nextDouble();
+       double F = in.nextDouble();
+       
+       double p = geron(A, B, F) + geron(C, D, F);
+       
+       System.out.format(Locale.US, "%.4f%n", p);
+       System.out.flush();
+
+   }
+   
+   public static double geron(double a, double b, double c){
+       double z = 0;
+       double p = (a + b + c) / 2.0f;
+       z = Math.sqrt(p*(p-a)*(p-b)*(p-c));
+       return z;
+   }
+}

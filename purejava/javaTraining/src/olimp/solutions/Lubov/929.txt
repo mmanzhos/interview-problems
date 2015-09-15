@@ -1,0 +1,25 @@
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Main
+{
+	public static void main(String[] args){
+
+		Scanner in = new Scanner(System.in );
+		in.useLocale(new Locale("US"));
+		
+		double A = in.nextDouble(); 
+		double B = in.nextDouble(); 
+		double C = in.nextDouble(); 
+		double D = in.nextDouble();
+		String x; 
+		
+		if(A == C && B == D) x="YES";
+		else if(A == B && C == D) x="YES";
+		else if(A == D && B ==C) x="YES";
+		else x="NO";
+		System.out.println("YES");
+		System.out.flush();
+		
+	}
+}

@@ -1,0 +1,25 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Main
+{
+	public static void main(String[] args){
+
+		Scanner in = new Scanner(System.in);
+		String[] x = in.nextLine().split(" ");
+		
+		int a = Integer.parseInt(x[0]);
+		int b = Integer.parseInt(x[1]);
+		int c = Integer.parseInt(x[2]);
+		
+		int[] ar = {a, b, c};
+		
+		Arrays.sort(ar);
+		
+		if(ar[0]*ar[0] + ar[1]*ar[1] == ar[2]*ar[2]){
+			System.out.println( "YES" );
+		} else System.out.println( "NO" );
+		System.out.flush();
+
+}
+}

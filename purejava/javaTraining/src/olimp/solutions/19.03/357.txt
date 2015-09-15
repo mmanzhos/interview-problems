@@ -1,0 +1,27 @@
+import java.util.Locale;
+import java.util.Scanner;
+
+
+public class Main
+{
+   public static void main(String[] args){
+               
+       
+               
+       
+       Scanner in = new Scanner(System.in );
+       in.useLocale(Locale.US);
+       
+       double biggest = -1;
+       
+       String[] val = in.nextLine().split(" ");
+       for(String va1 : val){
+           if(Double.parseDouble(va1) > biggest) biggest = Double.parseDouble(va1);
+       }
+       
+       System.out.format(Locale.US, "%.2f%n", biggest);
+           
+           
+
+   }
+}

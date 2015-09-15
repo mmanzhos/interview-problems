@@ -1,0 +1,14 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        List<Character> numbers = new ArrayList<Character>(new ArrayList<Character>(Arrays.asList('0', '1', '2', '3', '4', '5', '6', '7', '8', '9')));
+        for (Character x : new Scanner(System.in).nextLine().toCharArray()){
+            numbers.remove(x);
+        }
+        System.out.println(numbers.size()==0?0:numbers.size()+"\n"+numbers.toString().replaceAll(",", "").replace("[", "").replace("]", ""));
+    }
+}
