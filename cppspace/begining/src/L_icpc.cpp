@@ -2,7 +2,7 @@
 
 bool isPrime(long int n) {
 	if (n <= 12) return false;
-	std::cout << n << " counting prime" << std::endl;
+	//std::cout << n << " counting prime" << std::endl;
 	for (int i = 2; i < n; i++) {
 		if (n % i == 0 && i != n) {
 			return false;
@@ -23,14 +23,6 @@ long int reverseInt(long int n) {
 	return reversed;
 }
 
-bool noDuplicate(long int A[], long int initial, int length) {
-	for (long int i = 0; i < length; i++) {
-		std::cout << "A[i] == " << A[i] << std::endl;
-		if (initial == A[i] || initial == reverseInt(A[i])) return false;
-	}
-	return true;
-}
-
 
 int main() {
 
@@ -42,11 +34,10 @@ int main() {
 
 	long int counter = 0;
 
-	long int result = 0;
 	long int initial = 13;
 
 	while (counter != k) {
-		if (isPrime(initial) && isPrime(reverseInt(initial)) && noDuplicate(A, reverseInt(initial), k/2)) {
+		if (isPrime(initial) && isPrime(reverseInt(initial))) {
 			A[counter] = initial;
 			counter++;
 		}
