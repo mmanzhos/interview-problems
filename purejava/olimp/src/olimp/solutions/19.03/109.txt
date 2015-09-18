@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class Main
+{
+	public static void main(String[] args){
+				
+		
+		Scanner in = new Scanner(System.in );
+		int N = in.nextInt();
+		int M = 0;
+		
+		if(N<10) M = N;
+		else if(N>=10 && N < 190 && N%2 == 1) {
+			M = 9 + (N-9)/2;
+		} else if(N>=190 && N<2890 && N%3 == 0) {
+			M = 99 + (N-189)/3;
+		} else if(N>=2890 && N%4 == 1) {
+			M = 999 + (N-2889)/4;
+		}
+
+			//N = (9*1 + 90*2) + (M - 99)*3;
+			// M = 99 + (N-189)/3;
+		
+		
+		System.out.println(M);
+		System.out.flush();
+
+	}
+}

@@ -1,0 +1,42 @@
+import java.io.File;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Scanner;
+
+
+public class Main
+{
+   
+   public static void main(String[] argv) throws IOException{
+       new Main().run();
+   }
+           PrintWriter pw;
+           Scanner in;
+           public void run() throws IOException{
+               
+           File file = new File("input.txt");
+           in = new Scanner(file);
+           
+           int x = 0;
+        
+            int o_x = in.nextInt();
+            int o_y = in.nextInt();
+            int a_x = in.nextInt();
+            int a_y = in.nextInt();
+            int b_x = in.nextInt();
+            int b_y = in.nextInt();
+            int c_x = in.nextInt();
+            int c_y = in.nextInt();
+            
+            int is_1 = (a_x - o_x) * (b_y - a_y) - (b_x - a_x) * (a_y - o_y);
+           int is_2 = (b_x - o_x) * (c_y - b_y) - (c_x - b_x) * (b_y - o_y);
+           int is_3 = (c_x - o_x) * (a_y - c_y) - (a_x - c_x) * (c_y - o_y);
+           
+           if((is_1 >= 0 && is_2 >= 0 && is_3 >= 0) ||  (is_1 <= 0 && is_2 <= 0 && is_3 <= 0))
+               x = 1;
+        
+           pw = new PrintWriter(new File("output.txt"));
+           pw.println(x);
+           pw.close();
+       }
+}

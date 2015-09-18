@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+public class Main
+{
+	public static void main(String[] argv) throws IOException{
+		new Main().run();
+		}
+		PrintWriter pw;
+		Scanner sc;
+		public void run() throws IOException{
+			
+		 File file = new File("src/olimp/input.txt");
+         sc = new Scanner(file);
+		
+         String[] x = null;
+         String[] y = null;
+         while (sc.hasNextLine()) {
+        	x = sc.nextLine().split(" ");
+     		y = sc.nextLine().split(" ");
+     		
+         }
+         
+		
+		//System.out.println( sc.nextLine() );
+		
+		   
+		   int hours = Integer.parseInt(y[0]) - Integer.parseInt(x[0]);
+		   int minutes = Integer.parseInt(y[1]) - Integer.parseInt(x[1]);
+		   int seconds = Integer.parseInt(y[2]) - Integer.parseInt(x[2]);
+		   
+		   if(seconds < 0){
+			   seconds += 60;
+			   minutes -= 1;
+		   }
+		   if(minutes < 0) {
+			   hours -= 1;
+			   minutes += 60;
+		   }
+		   if(hours < 0){
+			   hours += 24;
+		   }
+
+		   
+		   System.out.println( hours + " " + minutes + " " + seconds );
+		
+		
+			pw = new PrintWriter(new File("src/olimp/output.txt"));
+			pw.println(hours + " " + minutes + " " + seconds);
+			pw.close();
+		}
+}

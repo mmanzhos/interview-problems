@@ -1,0 +1,44 @@
+import java.util.Locale;
+import java.util.Scanner;
+
+
+public class Main
+{
+   public static void main(String[] args){
+               
+       
+           Scanner in = new Scanner(System.in );
+           in.useLocale(Locale.US);
+           
+           int m = in.nextInt();
+           int n = in.nextInt();
+           int k = in.nextInt();
+           
+           int c = m / n;
+           int oper = c * n;
+           
+           String answer = c+".";
+           
+           for(int i = 0; i < k; i++){
+               int a1 = 0;
+               
+               a1 = m-oper;
+               //System.out.println( a1 );
+               c = a1 * 10 / n;
+               //System.out.println( c );
+               answer += ""+c;
+               m = a1*10;
+               //System.out.println( m );
+               oper = c * n;
+               //System.out.println( oper );
+               
+               //System.out.println(  );
+               
+               
+               //answer += ""+a1;
+               
+           }
+           
+           System.out.println( answer );
+}
+}

@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+public class Main
+{
+	public static void main(String[]args)
+	{
+		Scanner in = new Scanner(System.in);
+		    
+		String el = in.nextLine();
+		int countd= el.split("\\. ",-1).length-1;
+		int counte= el.split("\\! ",-1).length-1;
+		int countw= el.split("\\? ",-1).length-1;
+		
+		System.out.println(countd+counte+countw+1);
+	}
+}

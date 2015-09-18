@@ -1,0 +1,27 @@
+import java.util.Locale;
+import java.util.Scanner;
+
+public class Main 
+
+{
+	public static void main (String[] args)
+	{
+		Scanner in = new Scanner(System.in);
+		in.useLocale(Locale.US);
+		{
+			float x = in.nextFloat();
+			float y = in.nextFloat();
+			int ch;
+			if (x!=0)
+					{if(y!=0)
+							{if(x>0)
+									{if(y>0){ch=1;}
+									else{ch=4;}}
+							else{if(y>0){ch=2;}else{ch=3;}}}
+					else{ch=0;}}
+			else{ch=0;}
+			System.out.println(ch);
+		}
+System.out.flush();
+	}
+}

@@ -1,0 +1,26 @@
+
+import java.util.Scanner;
+public class Main 
+
+{
+	public static void main (String[] args)
+	{
+		Scanner in = new Scanner(System.in);
+		//int sqrt = (int) Math.sqrt(D);
+		int A = in.nextInt(); 
+		int B = in.nextInt();
+		int C = in.nextInt();
+		int D = B*B-4*A*C;
+		int square = (int) Math.sqrt(D);
+		int x1 = (-B + square)/(2*A);
+		int x2 = (-B - square)/(2*A);
+		//float sol = A*x1*x1+B*x1+C;
+		if (D<0) System.out.println("No roots");
+		else if (D==0) System.out.printf("One root:" + " " + x1);
+		else if (x1>x2) System.out.printf("Two roots:" + " " + x2 + " " + x1);
+		else System.out.printf("Two roots:" + " " + x1 + " " + x2);
+		
+		
+System.out.flush();
+	}
+}

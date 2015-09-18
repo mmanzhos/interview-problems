@@ -1,0 +1,37 @@
+import java.util.Scanner;
+import java.util.Locale;
+
+public class Main
+{
+	public static void main (String[] args)
+	{
+		Scanner in = new Scanner(System.in);
+		
+		int N = 0;
+		N = in.nextInt();
+		int result = 0;
+		int i = 0;
+		int k = 0;
+		
+		if (N == 2)
+		result = 0;
+		
+		if (N == 3)
+		result = 2;
+		
+		if (N == 4)
+		result = 6;
+		
+		for (i = 0 ;i < 200; i++)
+		{
+		 if (i + 5 == N) break;
+		}
+		k = i+1;
+		
+		if (N > 4)
+		result = ((N - 1)*(N + k))/2;
+		
+		System.out.println(result);
+		System.out.flush();
+	}	
+}

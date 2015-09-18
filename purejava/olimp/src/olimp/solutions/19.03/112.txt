@@ -1,0 +1,41 @@
+import java.util.Locale;
+import java.util.Scanner;
+
+
+public class Main
+{
+   public static void main(String[] args){
+               
+       
+       
+       Scanner in = new Scanner(System.in );
+       in.useLocale(Locale.US);
+       
+       int t1 = in.nextInt();
+       int t2 = in.nextInt();
+       int t3 = in.nextInt();
+       
+       double total_time = 0;
+       int min = 10001;
+       
+       //  1.0f/t1*1.0f + 1.0f/t2*1.0f + 1.0f/t3*1.0f
+       
+       if(t1 < min) min = t1;
+       if(t2 < min) min = t2;
+       if(t3 < min) min = t3;
+       //total_time = min;
+       
+       
+       total_time = 1.0f / (1.0f/t1*1.0f + 1.0f/t2*1.0f + 1.0f/t3*1.0f);
+       
+       if((t1 != t2 || t2 != t3 || t1 != t3) && total_time > min){
+           //total_time = min;
+       }
+           
+       
+       System.out.format(Locale.US, "%.2f%n", total_time );
+       
+       
+
+   }
+}

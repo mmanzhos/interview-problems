@@ -1,0 +1,71 @@
+import java.util.Locale;
+import java.util.Scanner;
+
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Scanner;
+
+public class Main
+{
+public static void main(String[] args){
+
+Scanner in = new Scanner(System.in );
+int A = in.nextInt();
+int B = in.nextInt();
+int C = in.nextInt();
+int D = in.nextInt();
+int i =0;
+int j =0;
+int operate = 0;
+
+ArrayList<Integer> list = new ArrayList<>();
+
+if ((A<B && C<D)||(A==B&&C<D)||(A<B&&C==D)){
+for(i = A; i <= B; i++){
+for(j = C; j <= D; j++){
+operate = i*j;
+list.add(operate);
+}	
+}
+}
+if ((A>B && C>D)||(A==B&&C>D)||(A>B&&C==D)){
+for(i = B; i <= A; i++){
+for(j = D; j <= C; j++){
+operate = i*j;
+list.add(operate);
+}
+}
+}
+if ((A>B && C<D)||(A==B&&C<D)||(A>B&&C==D)){
+for(i = B; i <= A; i++){
+for(j = C; j <= D; j++){
+operate = i*j;
+list.add(operate);
+}
+}
+}
+if ((A<B && C>D)||(A==B&&C>D)||(A<B&&C==D)){
+for(i = A; i <= B; i++){
+for(j = D; j <= C; j++){
+operate = i*j;
+list.add(operate);
+}
+}
+}
+else if(A==B && C==D){
+operate = i*j;
+list.add(operate);
+}
+
+
+HashSet hs = new HashSet();
+hs.addAll(list);
+list.clear();
+list.addAll(hs);
+
+System.out.println(list.size());
+System.out.flush();
+
+}
+}

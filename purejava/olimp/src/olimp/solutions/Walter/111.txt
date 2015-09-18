@@ -1,0 +1,108 @@
+import java.util.Locale;
+import java.util.Scanner;
+
+
+public class Main
+{
+	public static void main(String[] args)
+	{
+				
+		Scanner in = new Scanner(System.in );
+		
+		int H1 = in.nextInt();
+		int M1 = in.nextInt();
+		int H2 = in.nextInt();
+		int M2 = in.nextInt();
+		
+		int i = 0;
+		int k = 0;
+		int sum = 0;
+		int min = -1;
+		
+		int[] prom = new int[(H2 - H1) + 2];
+		if(M1 == 0)
+		{
+		for (i = H1; i <= H2; i++)
+		{
+			
+			prom[k] = i;
+			k++;
+			min++;
+		}
+		}
+		else
+		{
+			for (i = H1 + 1; i <= H2; i++)
+			{
+				
+				prom[k] = i;
+				k++;
+				min++;
+			}
+		}
+	
+		
+		for (k = 0; k <= prom.length - 1; k++)
+		{
+			if (prom[k] >= 1 && prom[k] <= 12)
+			sum += prom[k];
+			else if (prom[k] >= 13 && prom[k] <= 24)
+			sum += prom[k] - 12;
+		}
+			if(M1 == 0)
+		{
+			min = min - 1;
+		}
+		
+		if(M1 <= 30 && H1 != H2)
+		min += 1;
+
+		if(M2 >= 30)
+		min += 1;
+		
+		if(H1 == H2 && ((M1>30 && M2 <= 59) || (M1>=1 && M2<30)))
+		{
+			sum = 0;
+			min = 0;
+		}
+		if(H1 == H2 && M1<=30 && M2 > 30 && M1 != 0)
+		{
+			sum = 0;
+			min = 1;
+		} 
+		if(H1 == H2 && M1<=30 && M2 > 30 && M1 == 0)
+		{
+			min = 1;
+		} 
+		
+		if (H1 == 0 && M1 == 0)
+		{
+			sum += 12;
+		}
+		if (H1 == 0 && H2 == 0 && M1 == 0 && M2 == 0)
+		{
+			sum = 12;
+			min = 0;
+		}
+		
+		if (H1 == H2 && M1 == M2 && M1 == 0)
+		{
+			if(H1>=1 && H1 <=12)
+			{
+				sum = prom[0];
+				min = 0;
+			}
+			if (H1>=13 && H1<=24)
+			{
+				sum = prom[0] - 12;
+				min = 0;
+			}
+		}
+		if (H1 == H2 && M1 == M2 && M1 == 30)
+		{
+			sum = 0;
+			min = 1;
+		}
+		System.out.println(sum + min);
+	}
+}

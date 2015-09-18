@@ -1,0 +1,36 @@
+import java.util.Locale;
+import java.util.Scanner;
+import java.math.RoundingMode;
+import java.math.BigDecimal;
+
+
+public class Main
+{
+	public static void main(String[] args)
+	{
+			
+		Scanner in = new Scanner(System.in );
+		int A = in.nextInt();
+		int i = 0;
+		int k = 0;
+		double[] par = new double[3*A];
+		//int[] res = new int[A];
+		double[] res = new double[A];
+		for(i = 0; i < A*3; i++) 
+		{
+			par [i] = in.nextFloat();
+		}
+		
+		for(i = 0; i < 3*A; i=i+3)
+		{
+			res[k] = ((2*par[i]*par[i+2] + 2*par[i+1]*par[i+2])/16);
+			k++;
+		}
+			
+		//double X[] =  new BigDecimal(res).setScale(0, RoundingMode.UP).doubleValue();
+		for (i = 0; i < A; i++)
+		{
+		System.out.println(Math.round(Math.ceil(res[i])));
+		}
+	}
+}

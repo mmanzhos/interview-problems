@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+
+
+public class Main
+{
+	public static void main(String[] args)
+	{
+				
+		Scanner in = new Scanner(System.in );
+	
+		
+		int max = -1;
+		int k = 0;
+		
+		int N = in.nextInt();
+		int[] Ad = new int[N];
+		
+		for(int i = 0; i < N; i++)
+			{
+				Ad[i] = in.nextInt();
+				if(Ad[i] > max) 
+				{
+					max = Ad[i];
+				}
+			}
+		
+		for (int i = 0; i < Ad.length; i++)
+		{
+		if(max == Ad[i])
+		k++;
+		}
+		
+		System.out.println(k);
+		System.out.flush();
+
+	}
+}

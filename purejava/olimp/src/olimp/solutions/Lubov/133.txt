@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+
+public class Main
+{
+	public static void main(String[] args)
+	{
+				
+		Scanner in = new Scanner(System.in );
+		int N = in.nextInt();
+		double k = Math.pow((N+1), 2);
+		int K = (int)k;
+		
+		System.out.println(K);
+	}
+}	

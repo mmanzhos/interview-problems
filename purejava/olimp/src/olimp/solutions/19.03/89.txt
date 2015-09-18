@@ -1,0 +1,40 @@
+import java.util.Locale;
+import java.util.Scanner;
+
+
+public class Main
+{
+   public static void main(String[] args){
+               
+       
+           Scanner in = new Scanner(System.in );
+           in.useLocale(Locale.US);
+           
+           int m = in.nextInt();
+           for(int i = 0; i < m; i++){
+               int n = in.nextInt();
+               int sum_5 = 0;
+               //System.out.println( sum_5 );
+               for(int j = 0; j < n; j++){
+                   String[] z = in.nextLine().replace(":", "").split(" ");
+                   if(z.length == 1){
+                       z = in.nextLine().replace(":", "").split(" ");
+                   }
+                   sum_5 += 6;
+                   for(int h = 1; h < z.length; h++){
+                       int k = Integer.parseInt(z[h]);
+                       if(k == 0) break;
+                       if(h != 0) sum_5 -= 1;
+                   }
+               }
+               System.out.println( sum_5 );
+           }
+               
+               
+           
+           
+           
+           
+
+       }
+}

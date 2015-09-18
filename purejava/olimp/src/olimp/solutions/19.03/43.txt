@@ -1,0 +1,33 @@
+import java.util.Locale;
+import java.util.Scanner;
+
+
+public class Main
+{
+   public static void main(String[] args){
+               
+       
+       
+       Scanner in = new Scanner(System.in );
+       in.useLocale(Locale.US);
+       
+       int K = in.nextInt();
+       int N = in.nextInt();
+       int M = in.nextInt();
+       int D = in.nextInt();
+       
+       int total = K + N + M;
+       //float part_left = 1.0f / (total * 1.0f);
+       
+       double part_left = 1 - (Math.pow(K, -1) + Math.pow(N, -1) + Math.pow(M, -1));
+       double x = Math.round(D * 100 / part_left) / 100.0f;
+       
+       //System.out.println( x );
+       //System.out.println( x%1 );
+       
+       if(x % 1 != 0)
+           System.out.println( -1 );
+       else
+           System.out.println( Math.round(x) );
+	}
+}

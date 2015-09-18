@@ -1,0 +1,24 @@
+import java.util.Locale;
+import java.util.Scanner;
+
+
+public class Main
+{
+	public static void main(String[] args)
+	{
+				
+		Scanner in = new Scanner(System.in );
+		in.useLocale(Locale.US);
+				
+		float x = in.nextFloat();
+		float y = in.nextFloat();
+		float z = in.nextFloat();
+		float maxxy = Math.max(x, y);
+		float maxyz = Math.max(y, z);
+		float xyz = x+y+z;
+		float premin = Math.min(maxxy,maxyz);
+		float min = Math.min(premin,xyz);
+					
+		System.out.format(Locale.US, "%.2f%n", min);
+	}
+}	
