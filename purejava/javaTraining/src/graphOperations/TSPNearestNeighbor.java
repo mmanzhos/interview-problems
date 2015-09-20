@@ -21,58 +21,52 @@ import java.util.Stack;
 
 public class TSPNearestNeighbor {
 
-
-	private int numberOfNodes;
-    private Stack<Integer> stack;
- 
-	public TSPNearestNeighbor() {
-		stack = new Stack<Integer>();
+	boolean[] visited;
+	Stack<Integer> path;
+	
+	private void process(int node) {
+		visited[node] = true;
+		System.out.println(node+1);
+		path.push(node);
 	}
- 
-	public void tsp(int adjacencyMatrix[][]) {
-		numberOfNodes = adjacencyMatrix[0].length;
-		int[] visited = new int[numberOfNodes];
+	
+	public void tsp(int[][] matrix) {
+		int len = matrix.length;
+		int destination = 0;
 		
-		visited[0] = 1;
-		stack.push(0);
+		visited = new boolean[len];
+		path = new Stack<Integer>();
 		
-		int element;
-		int dst = 0;
-		int i;
-		int min = Integer.MAX_VALUE;
-		boolean minFlag = false;
+		process(0);
 		
-		System.out.print(0 + 1 + " ");
-
-		// DFS basis
-		while (!stack.isEmpty()) {
-			element = stack.peek();
-			min = Integer.MAX_VALUE;
-
-			// find minimum among adjacent vertices
-			for (i = 0; i < numberOfNodes; i++) {
-				if (adjacencyMatrix[element][i] > 1 && visited[i] == 0) {
-					if (min > adjacencyMatrix[element][i]) {
-						min = adjacencyMatrix[element][i];
-						dst = i;
-						minFlag = true;
+		while (!path.isEmpty()) {
+			int top = path.peek();
+			
+			int min = Integer.MAX_VALUE;
+			boolean wasMin = false;
+			
+			
+			for (int i = 0; i < len; i++) {
+				if (matrix[top][i] > 0 && visited[i] == false) {
+					if (matrix[top][i] < min) {
+						min = matrix[top][i];
+						destination = i;
+						wasMin = true;
 					}
 				}
 			}
-
-			// if minimum was found
-			// go to minimum node
-			if (minFlag) {
-				visited[dst] = 1;
-				stack.push(dst);
-				System.out.print((dst + 1) + " ");
-				minFlag = false;
+			
+			if (wasMin) {
+				process(destination);
 			} else {
-				stack.pop();
+				path.pop();
 			}
-
+			
 		}
+		
+		
 	}
+	
 
 	public static void main(String[] args) {
 		
@@ -91,16 +85,6 @@ public class TSPNearestNeighbor {
 				{240, 136, 131, 40,  389, 64,  83,  47,  0,   118},
 				{356, 17,  247, 155, 423, 181, 117, 78,  118, 0  },
 		};
-		for (int i = 0; i < g.getSize(); i++)
-        {
-            for (int j = 0; j < g.getSize(); j++)
-            {
-                if (adjMatrix[i][j] == 1 && adjMatrix[j][i] == 0)
-                {
-                	adjMatrix[j][i] = 1;
-                }
-            }
-        }
 		
 		
 		
