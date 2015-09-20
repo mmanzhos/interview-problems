@@ -6,7 +6,7 @@ I hope to push here all my solutions for Cracking the Coding Interview book and 
 
 ## My only tip for a preparation to an interview
 
-### Don't try to memorize solutions 
+### Don't try to memorize solutions
 Actually, I read it a ton of times, but the way I have been preparing for the last 2 monthes was wrong.
 I used to memorize. For every problem on http://leetcode.com/ I have met I was looking for a soution in a discuss topic, opened it in a new tab and tried to understand it, provide test examples and then code it on my own and sometimes looking at the original code to find my mistakes.
 **WRONG WAY**.
