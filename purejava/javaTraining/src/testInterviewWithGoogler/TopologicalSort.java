@@ -9,14 +9,12 @@ import java.util.concurrent.TimeUnit;
 public class TopologicalSort {
 
 	ExecutorService exe;
-	Object tmpLock;
 	
 	private void doSmth() {
 		//System.out.println("New thread #" + Thread.currentThread().getName());
 		
 		try {
-			
-			Thread.sleep(3000);
+			Thread.sleep(100);
 			//System.out.println("Thread #" + Thread.currentThread().getName() + " notified its end");
 			
 			
@@ -27,14 +25,12 @@ public class TopologicalSort {
 	
 	private void tps(GraphTS g) throws InterruptedException {
 
-		
 		boolean[] incomingVisited = new boolean[g.getSize()];
 		int isThereAnyUnvisited = g.getSize();
 
 		while (isThereAnyUnvisited > 0) {
 			
 			exe = Executors.newCachedThreadPool();
-			
 			
 			for (int i = 0; i < g.getSize(); i++) {
 				
@@ -50,13 +46,11 @@ public class TopologicalSort {
 					}
 					if (areAllVisited) {
 						System.out.println(i);
-						tmpLock = new Object();
 						exe.execute(new Runnable(){
 							public void run() {
 								doSmth();
 							}
 						});
-						//t1.start();
 						incomingVisited[i] = true;
 						isThereAnyUnvisited--;	
 					}
@@ -71,6 +65,7 @@ public class TopologicalSort {
 				e.printStackTrace();
 			}
 			
+			System.out.println();
 			
 			
 		}
