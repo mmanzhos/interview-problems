@@ -1,16 +1,16 @@
 package leetcode;
 
 
-public class MergeTwoSortedLists {
+class ListNode {
+	int val;
+	ListNode next;
 
-	public class ListNode {
-		int val;
-		ListNode next;
-
-		ListNode(int x) {
-			val = x;
-		}
+	ListNode(int x) {
+		val = x;
 	}
+}
+
+public class MergeTwoSortedLists {
 
 	public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
 		if (l1 == null)
